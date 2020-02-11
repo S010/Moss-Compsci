@@ -17,7 +17,7 @@ public class sign : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInRange) // This checks if the player has pressed the button and if the player is in range
+        if(Input.GetButtonDown("interact") && playerInRange) // This checks if the player has pressed the button and if the player is in range
         {
             if(dialogBox.activeInHierarchy)//This checks if the dialogbox is aleady on the screen
             {
