@@ -22,6 +22,8 @@ public class playerMovement : MonoBehaviour
         currentState = PlayerState.walk; // sets by default the player to walk
         animator = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>(); // Imports the component Rigidbody2D
+        animator.SetFloat("moveX",0);
+        animator.SetFloat("moveY",-1);
     }
 
     // Update is called once per frame
@@ -67,6 +69,7 @@ public class playerMovement : MonoBehaviour
 
     void movePlayer()
     {
+        playerChange.Normalize();
         playerRigidbody.MovePosition(
              transform.position + playerChange * speed * Time.deltaTime
         );
